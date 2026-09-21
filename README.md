@@ -103,12 +103,3 @@ CIT300_Student_Campus_System/
 - IT Building <-> Cafeteria
 - Cafeteria <-> Student Center
 
-## GitHub Collaboration
-Each member should use a branch for their assigned component, make clear commits, and then create a pull request to the main branch. Before the final submission, merge and test the complete project.
-
-## Final Submission Notes
-- Keep the repository complete and working.
-- Keep this README in the repository.
-- Record each member's contribution honestly and clearly.
-- Include the merged demonstration video as required by the assignment instructions.
-- If a Google Drive folder is needed because the project is too large for the LMS, follow the assignment's sharing and TXT-link instructions.
