@@ -11,18 +11,46 @@ public class Student {
         this.marks = marks;
     }
 
-    public String getStudentId() { return studentId; }
-    public String getName() { return name; }
-    public String getProgramme() { return programme; }
-    public double getMarks() { return marks; }
+    public String getStudentId() {
+        return studentId;
+    }
 
-    public void setName(String name) { this.name = name; }
-    public void setProgramme(String programme) { this.programme = programme; }
-    public void setMarks(double marks) { this.marks = marks; }
+    public String getName() {
+        return name;
+    }
+
+    public String getProgramme() {
+        return programme;
+    }
+
+    public double getMarks() {
+        return marks;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setProgramme(String programme) {
+        this.programme = programme;
+    }
+
+    public void setMarks(double marks) {
+        this.marks = marks;
+    }
+
+    // Updates all editable student details
+    public void updateDetails(String name, String programme, double marks) {
+        this.name = name;
+        this.programme = programme;
+        this.marks = marks;
+    }
 
     @Override
     public String toString() {
-        return String.format("ID: %-12s | Name: %-20s | Programme: %-18s | Marks: %.2f",
-                studentId, name, programme, marks);
+        return String.format(
+                "ID: %-12s | Name: %-20s | Programme: %-18s | Marks: %.2f",
+                studentId, name, programme, marks
+        );
     }
 }

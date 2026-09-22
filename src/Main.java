@@ -105,13 +105,14 @@ public class Main {
         String programme = readNonEmpty("New Programme: ");
         double marks = readDouble("New Marks (0-100): ", 0, 100);
 
-        student.setName(name);
-        student.setProgramme(programme);
-        student.setMarks(marks);
-        hashDirectory.put(student);
-        actionStack.push("Updated student " + student.getStudentId());
+       if (studentList.update(id, name, programme, marks)) {
+    hashDirectory.put(student);
+    actionStack.push("Updated student " + student.getStudentId());
 
-        System.out.println("Student updated successfully.");
+    System.out.println("Student updated successfully.");
+} else {
+    System.out.println("Student update failed.");
+}
     }
 
     private static void deleteStudent() {
