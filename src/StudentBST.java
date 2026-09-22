@@ -12,10 +12,14 @@ public class StudentBST {
     private Node root;
 
     public boolean insert(Student student) {
-        if (root == null) {
-            root = new Node(student);
-            return true;
-        }
+    if (student == null) {
+        return false;
+    }
+
+    if (root == null) {
+        root = new Node(student);
+        return true;
+    }
         return insertRecursive(root, student);
     }
 
