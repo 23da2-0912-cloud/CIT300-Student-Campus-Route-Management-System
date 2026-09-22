@@ -2,6 +2,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class ServiceRequestQueue {
+
     public static class ServiceRequest {
         private final String studentId;
         private final String service;
@@ -27,6 +28,15 @@ public class ServiceRequestQueue {
         return queue.poll();
     }
 
+    // Returns the next request without removing it
+    public ServiceRequest peekNext() {
+        return queue.peek();
+    }
+
+    public boolean isEmpty() {
+        return queue.isEmpty();
+    }
+
     public void display() {
         if (queue.isEmpty()) {
             System.out.println("No pending service requests.");
@@ -35,6 +45,7 @@ public class ServiceRequestQueue {
 
         System.out.println("\n--- Pending Service Requests (Queue) ---");
         int number = 1;
+
         for (ServiceRequest request : queue) {
             System.out.println(number + ". " + request);
             number++;
