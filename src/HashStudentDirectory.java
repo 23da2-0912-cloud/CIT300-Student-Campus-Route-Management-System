@@ -25,8 +25,12 @@ public class HashStudentDirectory {
         return Math.floorMod(hash, buckets.length);
     }
 
-    public boolean put(Student student) {
-        String key = student.getStudentId();
+   public boolean put(Student student) {
+    if (student == null || student.getStudentId() == null) {
+        return false;
+    }
+
+    String key = student.getStudentId();
         int index = hash(key);
         HashNode current = buckets[index];
 
