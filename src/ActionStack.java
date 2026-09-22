@@ -12,8 +12,17 @@ public class ActionStack {
         return stack.isEmpty() ? null : stack.pop();
     }
 
+    // Returns the most recent action without removing it
+    public String peek() {
+        return stack.isEmpty() ? null : stack.peek();
+    }
+
     public boolean isEmpty() {
         return stack.isEmpty();
+    }
+
+    public int size() {
+        return stack.size();
     }
 
     public void display() {
@@ -24,6 +33,7 @@ public class ActionStack {
 
         System.out.println("\n--- Recent Actions (Stack) ---");
         int number = 1;
+
         for (String action : stack) {
             System.out.println(number + ". " + action);
             number++;
