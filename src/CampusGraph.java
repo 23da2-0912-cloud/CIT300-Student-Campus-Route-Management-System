@@ -10,19 +10,23 @@ import java.util.Set;
 public class CampusGraph {
     private final Map<String, List<String>> adjacencyList = new HashMap<>();
 
-    private String normalize(String location) {
-        return location.trim();
+   private String normalize(String location) {
+    if (location == null) {
+        return "";
+    }
+    return location.trim();
+}
+
+   public boolean addLocation(String location) {
+    location = normalize(location);
+
+    if (location.isEmpty() || findKeyIgnoreCase(location) != null) {
+        return false;
     }
 
-    public boolean addLocation(String location) {
-        location = normalize(location);
-        if (location.isEmpty() || adjacencyList.containsKey(location)) {
-            return false;
-        }
-        adjacencyList.put(location, new ArrayList<>());
-        return true;
-    }
-
+    adjacencyList.put(location, new ArrayList<>());
+    return true;
+}
     public boolean removeLocation(String location) {
         location = normalize(location);
         if (!adjacencyList.containsKey(location)) {
